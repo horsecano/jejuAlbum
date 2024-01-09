@@ -38,18 +38,18 @@ const PlacePage = () => {
           places.map((place) => (
             <Link
               to={"/account/places/" + place._id}
-              className="flex cursor-pointer gap-4 bg-gray-200 p-2 rounded-2xl mb-4 hover:bg-gray-100 transition-all"
+              className="flex flex-col md:flex-row cursor-pointer bg-gray-200 p-4 rounded-2xl mb-4 hover:bg-gray-100 transition-all"
             >
-              <div className="flex w-52 h-40 bg-gray-300 shrink-0 rounded-lg m-2">
+              <div className="flex w-full md:w-52 h-40 bg-gray-300 rounded-lg mb-2 md:mb-0">
                 {place.photos.length > 0 && (
                   <img
-                    className="object-cover grow"
+                    className="object-cover w-full h-full rounded-xl"
                     src={"http://15.164.233.61:4000/uploads/" + place.photos[0]}
                     alt=""
                   />
                 )}
               </div>
-              <div className="grow-0 shrink">
+              <div className=" w-full md:w-auto md:ml-4">
                 <h2 className="text-xl">{place.title}</h2>
                 <p className="text-sm mt-2">{place.dec}</p>
               </div>

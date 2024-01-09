@@ -24,10 +24,12 @@ const SinglePage = () => {
       <div className=" absolute inset-0 bg-black text-white  min-h-screen">
         <div className="bg-black p-8 grid gap-4">
           <div>
-            <h2 className="text-3xl mr-48"> {place.title}의 모든 사진 보기</h2>
+            <h2 className="lg:text-4xl md:text-2xl sm:text-2xl mr-48">
+              {place.title}
+            </h2>
             <button
               onClick={() => setShowAllPhotos(false)}
-              className="fixed right-12 top-8 flex gap-1 py-2 px-4 rounded-2xl bg-white text-black shadow shadow-black"
+              className="fixed right-4 top-4 flex gap-1 py-2 px-4 rounded-2xl bg-white text-black shadow shadow-black hover:scale-105 transition-all"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -43,14 +45,13 @@ const SinglePage = () => {
                   d="M6 18 18 6M6 6l12 12"
                 />
               </svg>
-              사진보기 닫기
             </button>
           </div>
           {place?.photos?.length > 0 &&
             place.photos.map((photh) => (
               <div>
                 <img
-                  className=""
+                  className=" rounded-lg"
                   src={`http://15.164.233.61:4000/uploads/${photh}`}
                 />
               </div>
@@ -124,21 +125,22 @@ const SinglePage = () => {
         </div>
         <button
           onClick={() => setShowAllPhotos(true)}
-          className="flex gap-1 absolute bottom-2 right-2 py-4 px-4 bg-white rounded-2xl shadow-md shadow-gray-500"
+          className="flex gap-1 absolute bottom-2 right-2 py-3 px-4 bg-white rounded-2xl shadow-md shadow-gray-500 hover:scale-105 transition-all"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
+            fill="none"
             viewBox="0 0 24 24"
-            fill="currentColor"
+            stroke-width="1.5"
+            stroke="currentColor"
             class="w-6 h-6"
           >
             <path
-              fill-rule="evenodd"
-              d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z"
-              clip-rule="evenodd"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
             />
           </svg>
-          사진 더보기
         </button>
       </div>
       <div className="my-4">

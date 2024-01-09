@@ -49,7 +49,7 @@ const PlaceFormPage = () => {
   };
 
   if (redirect) {
-    return <Navigate to={"http://15.164.233.61:4000/account/places"} />;
+    return <Navigate to={"/account/places"} />;
   }
 
   return (

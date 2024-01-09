@@ -29,6 +29,7 @@ const IndexPage = () => {
             <h3 className="truncate text-gray-400">{place.address}</h3>
           </Link>
         ))}
+
     </div>
   );
 };

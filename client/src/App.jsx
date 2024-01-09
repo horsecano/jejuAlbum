@@ -12,7 +12,7 @@ import PlaceFormPage from "./pages/PlaceFormPage.jsx";
 import PlacePage from "./pages/PlacePage.jsx";
 import SinglePage from "./pages/SinglePage.jsx";
 
-axios.defaults.baseURL = "http://15.164.233.61:4000";
+axios.defaults.baseURL = "http://localhost:4000";
 axios.defaults.withCredentials = true;
 
 function App() {

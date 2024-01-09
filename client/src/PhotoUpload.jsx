@@ -6,12 +6,9 @@ const PhotoUpload = ({ addedPhotos, onChange }) => {
 
   async function addPhotoByLink(e) {
     e.preventDefault();
-    const { data: filename } = await axios.post(
-      "http://15.164.233.61:4000/upload-by-link",
-      {
-        link: photoLink,
-      }
-    );
+    const { data: filename } = await axios.post("http://15.164.233.61:4000/upload-by-link", {
+      link: photoLink,
+    });
     onChange((prev) => {
       return [...prev, filename];
     });
@@ -54,26 +51,13 @@ const PhotoUpload = ({ addedPhotos, onChange }) => {
   };
   return (
     <>
-      <div className="flex gap-2">
-        <input
-          value={photoLink}
-          onChange={(e) => setPhotoLink(e.target.value)}
-          type="text"
-          placeholder={"링크를 첨부해주세요!"}
-        />
-        <button
-          onClick={addPhotoByLink}
-          className="bg-gray-200 px-4 py-2 w-32 font-bold rounded-2xl items-center"
-        >
-          사진 첨부
-        </button>
-      </div>
-      <div className="mt-2 grid gap-2 grid-cols-4 md:gird-cols-4 lg:gird-cols-6">
+      <div className="flex gap-2"></div>
+      <div className="mt-2 grid gap-2 grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-6">
         {addedPhotos.length > 0 &&
           addedPhotos.map((link) => (
             <div className="h-60 flex relative">
               <img
-                className="rounded-xl w-full object-cover shrink"
+                className="rounded-xl w-full object-fill shrink"
                 src={"http://15.164.233.61:4000/uploads/" + link}
                 alt=""
               />
@@ -133,7 +117,7 @@ const PhotoUpload = ({ addedPhotos, onChange }) => {
               </button>
             </div>
           ))}
-        <label className="cursor-pointer flex items-center justify-center border bg-transparent rounded-2xl p-8 text-gray-600">
+        <label className="cursor-pointer flex items-center justify-center border bg-transparent rounded-2xl p-8 text-gray-600 lg:h-60 ">
           <input
             type="file"
             multiple
