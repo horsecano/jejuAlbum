@@ -10,7 +10,7 @@ const SinglePage = () => {
     if (!id) {
       return;
     }
-    axios.get(`/places/${id}`).then((res) => {
+    axios.get(`http://15.164.233.61:4000/places/${id}`).then((res) => {
       setPlace(res.data);
     });
   }, [id]);
@@ -51,7 +51,7 @@ const SinglePage = () => {
               <div>
                 <img
                   className=""
-                  src={`http://localhost:4000/uploads/${photh}`}
+                  src={`http://15.164.233.61:4000/uploads/${photh}`}
                 />
               </div>
             ))}
@@ -96,7 +96,7 @@ const SinglePage = () => {
               <img
                 onClick={() => setShowAllPhotos(true)}
                 className="aspect-square object-fill w-full p-0 cursor-pointer"
-                src={`http://localhost:4000/uploads/${place.photos?.[0]}`}
+                src={`http://15.164.233.61:4000/uploads/${place.photos?.[0]}`}
                 alt=""
               />
             </div>
@@ -106,7 +106,7 @@ const SinglePage = () => {
               <img
                 onClick={() => setShowAllPhotos(true)}
                 className="aspect-square object-cover cursor-pointer"
-                src={`http://localhost:4000/uploads/${place.photos?.[1]}`}
+                src={`http://15.164.233.61:4000/uploads/${place.photos?.[1]}`}
                 alt=""
               />
             )}
@@ -115,7 +115,7 @@ const SinglePage = () => {
                 <img
                   onClick={() => setShowAllPhotos(true)}
                   className="aspect-square object-cover relative cursor-pointer"
-                  src={`http://localhost:4000/uploads/${place.photos?.[2]}`}
+                  src={`http://15.164.233.61:4000/uploads/${place.photos?.[2]}`}
                   alt=""
                 />
               )}

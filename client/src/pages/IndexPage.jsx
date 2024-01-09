@@ -7,7 +7,7 @@ import AudioPlayer from "../Player/AudioPlayer";
 const IndexPage = () => {
   const [places, setPlaces] = useState([]);
   useEffect(() => {
-    axios.get("/places").then((res) => {
+    axios.get("http://15.164.233.61:4000/places").then((res) => {
       setPlaces(res.data);
     });
   }, []);
@@ -29,7 +29,6 @@ const IndexPage = () => {
             <h3 className="truncate text-gray-400">{place.address}</h3>
           </Link>
         ))}
-
     </div>
   );
 };
