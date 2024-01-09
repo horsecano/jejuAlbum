@@ -15,7 +15,7 @@ const AccountPage = () => {
   }
 
   const logout = async () => {
-    await axios.post("/logout");
+    await axios.post("http://15.164.233.61:4000/logout");
     setRedirect("/");
     setUser(null);
   };

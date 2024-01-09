@@ -6,7 +6,7 @@ import axios from "axios";
 const PlacePage = () => {
   const [places, setPlaces] = useState([]);
   useEffect(() => {
-    axios.get("/user-places").then(({ data }) => {
+    axios.get("http://15.164.233.61:4000/user-places").then(({ data }) => {
       setPlaces(data);
     });
   }, []);
@@ -44,7 +44,7 @@ const PlacePage = () => {
                 {place.photos.length > 0 && (
                   <img
                     className="object-cover w-full h-full rounded-xl"
-                    src={"http://localhost:4000/uploads/" + place.photos[0]}
+                    src={"http://15.164.233.61:4000/uploads/" + place.photos[0]}
                     alt=""
                   />
                 )}

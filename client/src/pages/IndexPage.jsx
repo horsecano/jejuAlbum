@@ -7,7 +7,7 @@ import AudioPlayer from "../Player/AudioPlayer";
 const IndexPage = () => {
   const [places, setPlaces] = useState([]);
   useEffect(() => {
-    axios.get("/places").then((res) => {
+    axios.get("http://15.164.233.61:4000/places").then((res) => {
       setPlaces(res.data);
     });
   }, []);
@@ -21,7 +21,7 @@ const IndexPage = () => {
               {place.photos?.[0] && (
                 <img
                   className=" rounded-2xl object-cover aspect-square "
-                  src={"http://localhost:4000/uploads/" + place.photos?.[0]}
+                  src={"http://15.164.233.61:4000/uploads/" + place.photos?.[0]}
                 />
               )}
             </div>

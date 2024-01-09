@@ -17,7 +17,7 @@ const PlaceFormPage = () => {
     if (!id) {
       return;
     }
-    axios.get("/places/" + id).then((res) => {
+    axios.get("http://15.164.233.61:4000/places/" + id).then((res) => {
       const { data } = res;
       setTitle(data.title);
       setAddress(data.address);
@@ -35,13 +35,13 @@ const PlaceFormPage = () => {
     };
     e.preventDefault();
     if (id) {
-      await axios.put("/places", {
+      await axios.put("http://15.164.233.61:4000/places", {
         id,
         ...placeData,
       });
       SetReDirect(true);
     } else {
-      await axios.post("/places", {
+      await axios.post("http://15.164.233.61:4000/places", {
         ...placeData,
       });
       SetReDirect(true);

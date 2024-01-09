@@ -6,7 +6,7 @@ const PhotoUpload = ({ addedPhotos, onChange }) => {
 
   async function addPhotoByLink(e) {
     e.preventDefault();
-    const { data: filename } = await axios.post("/upload-by-link", {
+    const { data: filename } = await axios.post("http://15.164.233.61:4000/upload-by-link", {
       link: photoLink,
     });
     onChange((prev) => {
@@ -23,7 +23,7 @@ const PhotoUpload = ({ addedPhotos, onChange }) => {
     }
 
     axios
-      .post("/upload", data, {
+      .post("http://15.164.233.61:4000/upload", data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -58,7 +58,7 @@ const PhotoUpload = ({ addedPhotos, onChange }) => {
             <div className="h-60 flex relative">
               <img
                 className="rounded-xl w-full object-fill shrink"
-                src={"http://localhost:4000/uploads/" + link}
+                src={"http://15.164.233.61:4000/uploads/" + link}
                 alt=""
               />
               <button
