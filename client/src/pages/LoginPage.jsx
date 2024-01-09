@@ -11,7 +11,7 @@ const LoginPage = () => {
   const handleLoginSubmmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://http://52.78.143.33/login", { email, password });
+      const { data } = await axios.post("http://15.164.233.61/login", { email, password });
 
       if (data) {
         alert("로그인 성공");
