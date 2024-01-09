@@ -13,7 +13,7 @@ const Header = () => {
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="w-10 h-10 rotate-45"
+          class="w-5 h-5 rotate-45"
         >
           <path
             stroke-linecap="round"
@@ -21,7 +21,7 @@ const Header = () => {
             d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
           />
         </svg>
-        <h1 className=" font-bold text-4xl">제주도 푸른밤</h1>
+        <h1 className="font-bold text-2xl">제주도 푸른밤</h1>
       </Link>
       <Link
         to={user ? "/account" : "/login"}

@@ -11,7 +11,7 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://15.164.233.61:4000/register", {
+      await axios.post("/register", {
         name,
         email,
         password,
